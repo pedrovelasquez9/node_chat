@@ -10,7 +10,7 @@
 <body>
 <script>
 $(document).ready(function(){
-	var socket = io.connect("http://localhost:8080");
+	var socket = io.connect("http://nodejschat-levels.rhcloud.com/");
 	
 	socket.on('messages', function(data){
 		$('#chat_space').append('<p>'+data+'</p>');
