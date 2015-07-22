@@ -1,0 +1,67 @@
+.chat_container{
+	border:1px solid #adadad;
+	margin-top: 5%;
+	border-radius: 5px;
+	height: 80vh;
+	padding: 0px !important;
+}
+
+.chat_left{
+	background-color:#adadad;
+	float: left;
+	height: 100%;
+	padding: 0px !important;
+}
+
+.chat_right{
+	float: right;
+	height: 100%;
+	padding: 0px !important;
+}
+
+.input_file{
+  float: left;
+  bottom: 0 !important;
+  position: absolute;
+  padding: 0px !important;
+  width: 100%;
+  height: 26px;
+}
+
+#chat_space{
+	height: 90%;
+}
+
+.input_container{
+	bottom: 0;
+  	position: absolute;
+  	left: 0;
+  	padding: 0;
+}
+
+.input_button{
+	float: right;
+  	padding: 0px !important;
+  	bottom: 0px !important;
+	right: 0px;
+	position: absolute;
+}
+
+.send_btn{
+	color: #fff;
+  	background-color: #333;
+  	border: none;
+  	height: 26px;
+  	width: 100%;
+  	border-radius: 0px 0px 0px 0px;
+}
+
+.status{
+	font-size: large;
+  	text-align: center;
+}
+
+.chat_space{
+	font-size: medium;
+  	font-style: italic;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Node | Express Chat</title>
+	<script src="/socket.io/socket.io.js"></script>
+	<link rel="stylesheet" type="text/css" href="http://localhost/node-it/nodejs/level6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://localhost/node-it/nodejs/level6/css/style.css">
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<script>
+$(document).ready(function(){
+	var socket = io.connect("http://localhost:8080");
+	
+	socket.on('messages', function(data){
+		$('#chat_space').append('<p>'+data+'</p>');
+	});
+
+	socket.on("connect",function(data){
+		nickname=prompt("Tell me your nickname");
+		socket.emit("join",nickname);
+		$("#status").html(nickname+" Connected");
+	});
+
+	$('#send_btn').click(function(e){
+		var message = $('#input_send').val();
+		socket.emit('messages', message);
+		$('#input_send').val("");
+	});
+});
+</script>
+	<section class="main_container col-md-12">
+		<div class="col-md-2"></div>
+		<div class="col-md-8 chat_container">
+			<aside class="col-md-4 chat_left">
+				<div id="status" class="status"></div>
+			</aside>
+			<aside class="col-md-8 chat_right">
+			<div class="col-md-12" id="chat_space" class="chat_space">
+				
+			</div>
+				<section class="col-md-10 input_container">
+					<input type="text" class="input_file" id="input_send" placeholder="Type your message">
+				</section>
+				<section class="col-md-2 input_button">
+					<button id="send_btn" class="send_btn">Send</button>
+				</section>
+				</section>
+			</aside>
+		</div>
+		<div class="col-md-2"></div>
+	</section>
+</body>
+</html>
